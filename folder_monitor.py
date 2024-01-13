@@ -31,7 +31,7 @@ output = sg.Output(size=(120, 20), key='-OUTPUT-', expand_x=True, expand_y=True)
 empty_space = sg.Text('', size=(1, 1), expand_x=True)
 
 layout = [
-    [sg.Text('Folder Path:'), sg.InputText(enable_events=True, key='-FOLDER-', size=(40, 1)), sg.Button('Browse'), sg.Button('Start', key='-START-'), sg.Button('Stop', key='-STOP-'), empty_space, sg.Button('About')],
+    [sg.Text('Folder Path:'), sg.InputText(enable_events=True, key='-FOLDER-', size=(40, 1)), sg.Button('Browse'), sg.Button('Start', key='-START-'), sg.Button('Stop', key='-STOP-', disabled=True), empty_space, sg.Button('About')],
     [output]
 ]
 
@@ -101,6 +101,7 @@ if __name__ == '__main__':
                     monitor_directory(values['-FOLDER-'])
                     print(f"Started monitoring {folder_path}")
                     window['-START-'].update(disabled=True)
+                    window['-STOP-'].update(disabled=False)
                 else: 
                     print("A monitoring thread already exists! If this error persists, restart the program.")
             else:
@@ -113,6 +114,7 @@ if __name__ == '__main__':
                 thread.join(timeout=1)  # Timeout to prevent GUI freeze
                 watcher = None  # Reset the watcher
                 window['-START-'].update(disabled=False)
+                window['-STOP-'].update(disabled=True)
                 print("Stopped monitoring.")
             else:
                 print("Not currently monitoring.")
