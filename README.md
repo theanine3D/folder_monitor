@@ -9,5 +9,7 @@ A simple, portable, lightweight app that monitors a specified folder and logs an
 # Running
 You can download a compiled binary from the Releases page. This is the easiest method.
 
-Alternatively, you can download the source code and run the Python file via the command line. Open a command prmopt and use the command:
-- python folder_monitor.py
+Alternatively, you can download the source code and run the Python file via the command line. Open a command prompt and use the command:
+```
+python folder_monitor.py
+```
