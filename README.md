@@ -17,3 +17,10 @@ and then open a command prompt and use the command:
 ```
 python folder_monitor.py
 ```
+
+### Use Cases
+I created Folder Monitor because I needed to locate a specific file being loaded by a game. This game uses obfuscated/hashed filenames for its datafiles (such as models, textures, etc.), which makes it very difficult to locate any specific file. However, by starting the monitoring in this program, and then going to a specific level in the game, all of the files being loaded in that level were logged by Folder Monitor. Locating specific files this way makes it now trivially easy with Folder Monitor. See screenshot below.
+
+### Preview
+![image](https://github.com/theanine3D/folder_monitor/assets/88953117/398c0f18-43e8-4706-b1ec-6f5700ed27bc)
+
