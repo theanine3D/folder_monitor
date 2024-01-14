@@ -7,8 +7,8 @@ A simple, portable, lightweight app that monitors a specified folder and logs an
 </p>
 
 ### Features
-- Logs any file modifications, creations, and deletions that occur in a specified folder
-- File reads are also logged, as long as the file's "Last Accessed Date" metadata was modified
+- Tracks any file modifications, creations, and deletions that occur in a specified folder
+- Also logs file reads, as long as the file's "Last Accessed Date" metadata was modified
 - Lightweight, with a total filesize of under 20 MB, and very low memory usage 
 
 ### Installation
