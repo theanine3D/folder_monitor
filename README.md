@@ -6,6 +6,11 @@
 A simple, portable, lightweight app that monitors a specified folder and logs any changes to its contained files.
 </p>
 
+### Features
+- Logs any file modifications, creations, and deletions that occur in a specified folder
+- File reads are also logged, as long as the file's "Last Accessed Date" metadata was modified
+- Lightweight, with a total filesize of under 20 MB, and very low memory usage 
+
 ### Installation
 You can download a compiled binary from the Releases page. This is the easiest method, as it requires no installation. The executable is fully portable and can be placed anywhere on your hard drive.
 
