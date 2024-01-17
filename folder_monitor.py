@@ -3,7 +3,7 @@ Folder Monitor
 Copyright (c) 2024 Pedro Valencia (Theanine3D)
 Web: https://www.github.com/theanine3D
 Discord: @theanine3D
-Date: 2023-01-14
+Date: 2023-01-16
 
 Description:
 This program monitors a specified folder for any modifications to its contained files.
@@ -22,7 +22,7 @@ import threading
 import os
 import PySimpleGUI as sg
 
-version = "1.0"
+version = "1.1"
 watcher = None
 thread = None
 
@@ -65,7 +65,15 @@ class Handler(FileSystemEventHandler):
         elif event.event_type in ('created', 'modified', 'deleted'):
             rel_path = os.path.relpath(event.src_path, self.watch_dir)
             timestamp = strftime('%H:%M:%S - %Y-%m-%d',localtime())
-            print(f"{timestamp} - {event.event_type.capitalize()}: - {rel_path}")
+            filesize = os.path.getsize(event.src_path)
+            filesize_unit = "B"
+            if filesize >= 1048576:
+                filesize = filesize / 1024 / 1024
+                filesize_unit = "MB"
+            elif filesize >= 1024:
+                filesize = filesize / 1024
+                filesize_unit = "KB"
+            print(f"{timestamp} - {event.event_type.capitalize()}: - {rel_path} - {round(filesize,2)} {filesize_unit}")
 
 def monitor_directory(directory_to_watch):
     global watcher, thread
