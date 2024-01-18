@@ -27,5 +27,5 @@ python folder_monitor.py
 I created Folder Monitor because I needed to locate a specific file being loaded by a game. This game uses obfuscated/hashed filenames for its datafiles (such as models, textures, etc.), which makes it very difficult to locate any specific file. However, by starting the monitoring in this program, and then going to a specific level in the game, all of the files being loaded in that level were logged by Folder Monitor. The program makes locating specific game files trivially easy now. See screenshot below.
 
 ### Preview
-![image](https://github.com/theanine3D/folder_monitor/assets/88953117/398c0f18-43e8-4706-b1ec-6f5700ed27bc)
+![image](https://github.com/theanine3D/folder_monitor/assets/88953117/21b550d7-0e04-4526-8476-89463459f0a4)
 
