@@ -65,15 +65,23 @@ class Handler(FileSystemEventHandler):
         elif event.event_type in ('created', 'modified', 'deleted'):
             rel_path = os.path.relpath(event.src_path, self.watch_dir)
             timestamp = strftime('%H:%M:%S - %Y-%m-%d',localtime())
-            filesize = os.path.getsize(event.src_path)
+            filesize = None
+            try:
+                filesize = os.path.getsize(event.src_path)
+            except:
+                pass
             filesize_unit = "B"
-            if filesize >= 1048576:
-                filesize = filesize / 1024 / 1024
-                filesize_unit = "MB"
-            elif filesize >= 1024:
-                filesize = filesize / 1024
-                filesize_unit = "KB"
-            print(f"{timestamp} - {event.event_type.capitalize()}: - {rel_path} - {round(filesize,2)} {filesize_unit}")
+            if filesize != None:
+                if filesize >= 1048576:
+                    filesize = filesize / 1024 / 1024
+                    filesize_unit = "MB"
+                elif filesize >= 1024:
+                    filesize = filesize / 1024
+                    filesize_unit = "KB"
+            line = f"{timestamp} - {event.event_type.capitalize()}: - {rel_path}"
+            if filesize != None:
+                line += f" - {round(filesize,2)} {filesize_unit}"
+            print(line)
 
 def monitor_directory(directory_to_watch):
     global watcher, thread
