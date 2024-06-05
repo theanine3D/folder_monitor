@@ -16,7 +16,7 @@ You can download a compiled binary from the Releases page. This is the easiest m
 
 Alternatively, you can download the source code and run the Python file via the command line. You will need to first install the dependencies via the command:
 ```
-pip install PySimpleGUI watchdog
+pip install FreeSimpleGUI watchdog
 ```
 and then open a command prompt and use the command:
 ```
