@@ -20,7 +20,7 @@ from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 import threading
 import os
-import PySimpleGUI as sg
+import FreeSimpleGUI as sg
 
 version = "1.1"
 watcher = None
